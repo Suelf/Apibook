@@ -25,7 +25,7 @@ public class LivroController {
         return new ResponseEntity(livro, HttpStatus.OK);
     }
 
-    @GetMapping( path = "Buscar")
+    @GetMapping( path = "Buscar/{nome}")
     //buscar livro
     public ResponseEntity<LivroController> BuscarrLivro(@PathParam("nome") String nome) {
         for (int i = 0; i < Budega.size(); i++) {
@@ -37,7 +37,7 @@ public class LivroController {
     }
 
     //Deletar Livro
-    @GetMapping(path = "Delete")
+    @GetMapping(path = "Delete/{nome}")
     public ResponseEntity<LivroController> DeletarLivro(@PathParam("nome") String nome) {
         for (int i = 0; i < Budega.size(); i++) {
             if (Budega.get(i).equals(nome)) {
