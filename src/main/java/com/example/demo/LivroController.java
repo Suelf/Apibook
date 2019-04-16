@@ -61,5 +61,11 @@ public class LivroController {
         }
         return new ResponseEntity(HttpStatus.OK);
     }
-
+    @GetMapping(path = "/Listar")
+    public ResponseEntity<LivroController> list(){
+        for (int i = 0; i < Budega.size(); i++){
+            Budega.get(i);
+        }
+        return new ResponseEntity(HttpStatus.OK);
+    }
 }
